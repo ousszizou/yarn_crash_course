@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>yarn crash course</title>
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+				<section>
+					<section data-background-color="#2E88B6">
+						<h1>Introduction</h1>
+					</section>
+					<section>
+						<h1 class="fragment" style="color: #2E88B6">What is a package?</h1>
+						<p class="fragment" style="font-size: 32px">
+							A package is a reusable piece of software which can be downloaded from a global registry into a developer’s local environment. Each package may or may not depend on other packages.
+						</p>
+					</section>
+					<section>
+						<h1 class="fragment" style="color: #2E88B6">What is a Package Manager?</h1>
+						<p class="fragment" style="font-size: 32px">
+							Simply put — a package manager is a piece of software that lets you manage the dependencies (external code written by you or someone else) that your project needs to work correctly.
+						</p>
+					</section>
+					<section>
+						<h1 class="fragment" style="color: #2E88B6">What is Yarn ?</h1>
+						<p class="fragment" style="font-size: 32px">
+							Yarn is a JavaScript Package Manager, a direct competitor of <span style="color: red; font-weight: 700">npm</span>, and it’s one of the Facebook Open Source projects.
+						</p>
+						<p class="fragment" style="font-size: 32px">
+							When it launched it used to be way faster than npm due to parallel download and caching, but now npm did catch up with many of its features
+						</p>
+					</section>
+					<section>
+						<h1 class="fragment" style="color: #2E88B6">Features</h1>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#2E88B6">
+						<h1>Installation</h1>
+					</section>
+					<section>
+						<p style="background: #222">$ npm install -g yarn</p>
+					</section>
+				</section>
+				<section>
+					<section data-background-color="#2E88B6">
+						<h1>Managing packages</h1>
+					</section>
+					<section>
+						<p style="font-size: 32px">
+							Yarn writes its dependencies to a file named <span style="color: red; font-weight: 700">package.json</span>, which sits in the root folder of your project, and stores the dependencies files into the <span style="color: green; font-weight: 700">node_modules</span> folder, just like <u>npm</u> if you used it in the past.
+						</p>
+					</section>
+					<section>
+						<h3 class="fragment" style="color: #2E88B6">Initialize a new project</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn init</span>
+						</p>
+					</section>
+					<section>
+						<h3 class="fragment" style="color: #2E88B6">Install the dependencies of an existing project</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn</span>
+						</p>
+						<p class="fragment">
+							OR
+						</p>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn install</span>
+						</p>
+					</section>
+					<section>
+						<h3 class="fragment" style="color: #2E88B6">Install a package locally</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn add</span> package-name
+						</p>
+						<h3 class="fragment" style="color: #2E88B6">Install a package globally
+						</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn</span> <span style="color:#8bc34a">global</span> <span style="color: #ff5722">add</span> package-name
+						</p>
+						<h3 class="fragment" style="color: #2E88B6">Install a package locally as a development dependency
+						</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn add</span> <span style="color:#8bc34a">--dev</span> package-name
+						</p>
+						<p class="fragment">
+							OR
+						</p>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn add</span> <span style="color:#8bc34a">-D</span> package-name
+						</p>
+					</section>
+					<section>
+						<h3 class="fragment" style="color: #2E88B6">Remove a package</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn remove</span> package-name
+						</p>
+					</section>
+					<section>
+						<h3 class="fragment" style="color: #2E88B6">Inspecting licenses</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn</span> licenses <span style="color: #ff5722">ls</span> 
+						</p>
+					</section>
+					<section>
+						<h3 class="fragment" style="color: #2E88B6">Inspecting dependencies</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn why</span> package-name 
+						</p>
+					</section>
+					<section>
+						<h3 class="fragment" style="color: #2E88B6">Upgrading packages
+						</h3>
+						<h5 class="fragment">If you want to upgrade a single package, run</h5>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn upgrade</span> package-name 
+						</p>
+						<h5 class="fragment">To upgrade all your packages, run</h5>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn upgrade</span>
+						</p>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn</span> upgrade-interactive
+						</p>
+					</section>
+					<section>
+						<h3 class="fragment" style="color: #2E88B6">Updating yarn
+						</h3>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn</span> self-update
+						</p>
+						<p class="fragment">
+							OR
+						</p>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">yarn</span> self-update 0.15.1
+						</p>
+						<p class="fragment">
+							OR
+						</p>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">npm</span> uninstall yarn -g
+						</p>
+						<p class="fragment" style="font-size: 32px;background: #222">
+							$ <span style="color: #ff5722">npm</span> install yarn -g
+						</p>
+					</section>
+				</section>
+				<section>
+					<h3>Have fun with Yarn! 🥳❤️ </h3>
+				</section>
+			</div>
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				controls: true,
+				controlsTutorial: true,
+				progress: true,
+				slideNumber: true,
+				hash: false,
+				showNotes: false,
+				transition: 'slide',
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					// Zoom in and out with Alt+click
+					{ src: 'plugin/zoom-js/zoom.js', async: true }
+				]
+			});
+		</script>
+	</body>
+</html>
